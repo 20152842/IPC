@@ -1,0 +1,45 @@
+version: '3'
+services:
+  work01:
+    image: ssh-server:ubuntu-22.04
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5050:22"
+    hostname: work01
+    volumes:
+      - .:/build
+
+  work02:
+    image: ssh-server:ubuntu-22.04
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5051:22"
+    hostname: work02
+    volumes:
+      - .:/build
+
+  work03:
+    image: ssh-server:ubuntu-22.04
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5052:22"
+    hostname: work03
+    volumes:
+      - .:/build
+
+  work04:
+    image: ssh-server:ubuntu-22.04
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5053:22"
+    hostname: work04
+    volumes:
+      - .:/build
