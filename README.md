@@ -64,8 +64,8 @@ Linux 환경에서 Docker를 활용하여 진행
           노드에서 명령어 실행 결과(표준 에러)를 /tmp/run/error/<Node이름>.err 에 저장
 
 4. Interactive Mode 구현
-   ...
-   통신할 노드를 선택하는 방식
+   
+   > 통신할 노드를 선택하는 방식
    ex) $ clsh -hostfile ./hostfile -i
        Enter 'quit' to leave this interactive mmode
        Working with nodes: node1,node2,node3
@@ -76,10 +76,10 @@ Linux 환경에서 Docker를 활용하여 진행
        node3: ...
        ---------------
        clsh>
-   ...
+   
        -i 옵션 입력 후 연결 가능한 노드 목록 중 원하는 노드를 입력하면 선택한
        노드들만 통신(단일, 다수 가능)
-       노드 미 입력시 연결 가능한 모든 노드들과 통
+       노드 미 입력시 연결 가능한 모든 노드들과 통신
 
    
    
