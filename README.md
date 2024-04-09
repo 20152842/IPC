@@ -7,7 +7,7 @@ Linux 환경에서 Docker를 활용하여 진행
 기본 사용 옵션
 1. node1, node2, node3, node4의 /proc/loadavg 읽어오기
    >       ex) $clsh -h node1,node2,node3,node4 cat /proc/loadavg
-              -> clsh ~ node4 : 실행 옵션 / cat /proc/loadavg : 원격 실행할 명령어
+               명령어 설명 : clsh ~ node4 : 실행 옵션 / cat /proc/loadavg : 원격 실행할 명령어
           결과 : node1: 0.02 0.01 0.00 1/202 23042
                  node4: 0.02 0.01 0.00 1/202 23042
                  node2: 0.02 0.01 0.00 1/202 23042
@@ -54,12 +54,12 @@ Linux 환경에서 Docker를 활용하여 진행
 
 2. 쉘 Redirection 구현
    >      ex) $ ls /etc/*.conf | clsh -hostfile ./hostfile -b xargs ls
-          -> ls 의 결과를 clsh 로 전달하여 원격 실행
+          명령어 설명 : ls 의 결과를 clsh 로 전달하여 원격 실행
 
 3. 출력 옵션 구현
    >      ex) $ clsh -out=/tmp/run/ -err=/tmp/run/error/ ls /etc
-       -> 노드에서 명령어 실행 결과(표준 출력)를 /tmp/run/<Node이름>.out 에 저장
-          노드에서 명령어 실행 결과(표준 에러)를 /tmp/run/error/<Node이름>.err 에 저장
+          명령어 설명 : 노드에서 명령어 실행 결과(표준 출력)를 /tmp/run/<Node이름>.out 에 저장
+                        노드에서 명령어 실행 결과(표준 에러)를 /tmp/run/error/<Node이름>.err 에 저장
 
 4. Interactive Mode 구현
    
