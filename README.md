@@ -32,54 +32,55 @@ Linux 환경에서 Docker를 활용하여 진행
    2. CLSH_HOSTFILE 환경 변수에서 파일 이름 읽어오기(default : 상대경로, `/`로 시작할 경우 절대 경로 처리)
    3. 현재 디렉토리에서 .hostfile 읽어오기
    위 3가지 실패할 경우, 에러 처리
-   >        ex1) export CLSH_HOSTS=node1:node12:node30
-                 $clsh cat /proc/loadavg
-                 Note: use CLSH_HOSTS environment
-                 node1: ...
-                 node12: ...
-                 node30: ...
-            ex2) export CLSH_HOSTFILE=clusterfile
-                 $clsh cat /proc/loadavg
-                 Note: use hostfile 'clusterfile' (CLSH_HOSTFILE env)
-                 node1: ...
-                 node12: ...
-                 node30: ...
-            ex3) $clsh cat /proc/loadavg
-                 Note: use hostfile '.hostfile' (default)
-                 node1: ...
-                 node12: ...
-                 node30: ...
-            ex Error) CLSH_HOSTS 환경 변수가 없는 경우
-                     -> CLSH_HOSTFILE 환경 변수 검사, 없는 경우
-                     -> .hostfile 검사, 없는 경우
-                     -> 에러 문구 출력 후 종료
+   >     ex1) export CLSH_HOSTS=node1:node12:node30
+   >          $clsh cat /proc/loadavg
+   >          Note: use CLSH_HOSTS environment
+   >          node1: ...
+   >          node12: ...
+   >          node30: ...
+   >     ex2) export CLSH_HOSTFILE=clusterfile
+   >          $clsh cat /proc/loadavg
+   >          Note: use hostfile 'clusterfile' (CLSH_HOSTFILE env)
+   >          node1: ...
+   >          node12: ...
+   >          node30: ...
+   >     ex3) $clsh cat /proc/loadavg
+   >          Note: use hostfile '.hostfile' (default)
+   >          node1: ...
+   >          node12: ...
+   >          node30: ...
+   >     ex Error) CLSH_HOSTS 환경 변수가 없는 경우
+   >          -> CLSH_HOSTFILE 환경 변수 검사, 없는 경우
+   >          -> .hostfile 검사, 없는 경우
+   >          -> 에러 문구 출력 후 종료
 
 2. 쉘 Redirection 구현
-   >      ex) $ ls /etc/*.conf | clsh -hostfile ./hostfile -b xargs ls
-          명령어 설명 : ls 의 결과를 clsh 로 전달하여 원격 실행
+   >     ex) $ ls /etc/*.conf | clsh -hostfile ./hostfile -b xargs ls
+   >     -> ls 의 결과를 clsh 로 전달하여 원격 실행
 
 3. 출력 옵션 구현
-   >      ex) $ clsh -out=/tmp/run/ -err=/tmp/run/error/ ls /etc
-          명령어 설명 : 노드에서 명령어 실행 결과(표준 출력)를 /tmp/run/<Node이름>.out 에 저장
-                        노드에서 명령어 실행 결과(표준 에러)를 /tmp/run/error/<Node이름>.err 에 저장
+   >     ex) $ clsh -out=/tmp/run/ -err=/tmp/run/error/ ls /etc
+   > 
+   >     노드에서 명령어 실행 결과(표준 출력)를 /tmp/run/<Node이름>.out 에 저장
+   >     노드에서 명령어 실행 결과(표준 에러)를 /tmp/run/error/<Node이름>.err 에 저장
 
 4. Interactive Mode 구현
    
-   >       통신할 노드를 선택하는 방식
-         ex) $ clsh -hostfile ./hostfile -i
-             Enter 'quit' to leave this interactive mmode
-             Working with nodes: node1,node2,node3
-             clsh> uname
-             ---------------
-             node1: ...
-             node2: ...
-             node3: ...
-             ---------------
-             clsh>
-     
-   -i 옵션 입력 후 연결 가능한 노드 목록 중 원하는 노드를 입력하면 선택한
-   노드들만 통신(단일, 다수 가능)
-   노드 미 입력시 연결 가능한 모든 노드들과 통신
+   >     통신할 노드를 선택하는 방식
+   >     ex) $ clsh -hostfile ./hostfile -i
+   >         Enter 'quit' to leave this interactive mmode
+   >         Working with nodes: node1,node2,node3
+   >         clsh> uname
+   >         ---------------
+   >         node1: ...
+   >         node2: ...
+   >         node3: ...
+   >         ---------------
+   >         clsh>
+   > 
+   >     -i 옵션 입력 후 연결 가능한 노드 목록 중 원하는 노드를 입력하면 선택한
+   >     노드들만 통신(단일, 다수 가능)
+   >     노드 미 입력시 연결 가능한 모든 노드들과 통신
 
    
    
