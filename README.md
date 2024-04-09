@@ -10,20 +10,21 @@ Linux 환경에서 Docker를 활용하여 진행
    >     -> clsh ~ node4 : 실행 옵션 / cat /proc/loadavg : 원격 실행할 명령어
    > 
    >     결과 : node1: 0.02 0.01 0.00 1/202 23042
-   >     node4: 0.02 0.01 0.00 1/202 23042
-   >     node2: 0.02 0.01 0.00 1/202 23042
-   >     node3: 0.02 0.01 0.00 1/202 23042
+   >            node4: 0.02 0.01 0.00 1/202 23042
+   >            node2: 0.02 0.01 0.00 1/202 23042
+   >            node3: 0.02 0.01 0.00 1/202 23042
    >     -> '노드이름': '각 노드의 출력', 응답이 오는 순서대로 출력
 
 2. 호스트 파일에 노드의 이름을 저장하여 사용
    호스트 파일에는 한 라인에 하나의 호스트 이름 혹은 IP 주소가 저장
-  >      ex) $cat ./hostfile의 내용이 아래와 같을 때
-             node1
-             node2
-             node3
-             node4
-             $clsh -hostfile ./hostfile cat /proc/loadavg 의 명령어는
-             $clsh -h node1,node2,node3,node4 cat /proc/loadavg 를 명령어와 동일하다.
+  >     ex) $cat ./hostfile의 내용이 아래와 같을 때
+  >          node1
+  >          node2
+  >          node3
+  >          node4
+  > 
+  >     $clsh -hostfile ./hostfile cat /proc/loadavg 의 명령어는
+  >     $clsh -h node1,node2,node3,node4 cat /proc/loadavg 를 명령어와 동일하다.
 
 추가 사용 옵션
 1. --hostfile 옵션을 생략할 경우의 동작
