@@ -32,23 +32,27 @@ Linux 환경에서 Docker를 활용하여 진행
    2. CLSH_HOSTFILE 환경 변수에서 파일 이름 읽어오기(default : 상대경로, `/`로 시작할 경우 절대 경로 처리)
    3. 현재 디렉토리에서 .hostfile 읽어오기
    위 3가지 실패할 경우, 에러 처리
+
    >     ex1) export CLSH_HOSTS=node1:node12:node30
    >          $clsh cat /proc/loadavg
    >          Note: use CLSH_HOSTS environment
    >          node1: ...
    >          node12: ...
    >          node30: ...
+   > 
    >     ex2) export CLSH_HOSTFILE=clusterfile
    >          $clsh cat /proc/loadavg
    >          Note: use hostfile 'clusterfile' (CLSH_HOSTFILE env)
    >          node1: ...
    >          node12: ...
    >          node30: ...
+   > 
    >     ex3) $clsh cat /proc/loadavg
    >          Note: use hostfile '.hostfile' (default)
    >          node1: ...
    >          node12: ...
    >          node30: ...
+   > 
    >     ex Error) CLSH_HOSTS 환경 변수가 없는 경우
    >          -> CLSH_HOSTFILE 환경 변수 검사, 없는 경우
    >          -> .hostfile 검사, 없는 경우
@@ -67,6 +71,7 @@ Linux 환경에서 Docker를 활용하여 진행
 4. Interactive Mode 구현
    
    >     통신할 노드를 선택하는 방식
+   > 
    >     ex) $ clsh -hostfile ./hostfile -i
    >         Enter 'quit' to leave this interactive mmode
    >         Working with nodes: node1,node2,node3
