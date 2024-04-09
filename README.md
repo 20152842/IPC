@@ -7,7 +7,7 @@ Linux 환경에서 Docker를 활용하여 진행
 기본 사용 옵션
 1. node1, node2, node3, node4의 /proc/loadavg 읽어오기
    >       ex) $clsh -h node1,node2,node3,node4 cat /proc/loadavg
-               명령어 설명 : clsh ~ node4 : 실행 옵션 / cat /proc/loadavg : 원격 실행할 명령어
+   >                명령어 설명 : clsh ~ node4 : 실행 옵션 / cat /proc/loadavg : 원격 실행할 명령어
           결과 : node1: 0.02 0.01 0.00 1/202 23042
                  node4: 0.02 0.01 0.00 1/202 23042
                  node2: 0.02 0.01 0.00 1/202 23042
