@@ -8,7 +8,6 @@ Linux 환경에서 Docker를 활용하여 진행
 1. node1, node2, node3, node4의 /proc/loadavg 읽어오기
    >       ex) $clsh -h node1,node2,node3,node4 cat /proc/loadavg
               -> clsh ~ node4 : 실행 옵션 / cat /proc/loadavg : 원격 실행할 명령어
-         
           결과 : node1: 0.02 0.01 0.00 1/202 23042
                  node4: 0.02 0.01 0.00 1/202 23042
                  node2: 0.02 0.01 0.00 1/202 23042
@@ -22,7 +21,6 @@ Linux 환경에서 Docker를 활용하여 진행
              node2
              node3
              node4
-         
              $clsh -hostfile ./hostfile cat /proc/loadavg 의 명령어는
              $clsh -h node1,node2,node3,node4 cat /proc/loadavg 를 명령어와 동일하다.
 
@@ -66,7 +64,6 @@ Linux 환경에서 Docker를 활용하여 진행
 4. Interactive Mode 구현
    
    >       통신할 노드를 선택하는 방식
-   
          ex) $ clsh -hostfile ./hostfile -i
              Enter 'quit' to leave this interactive mmode
              Working with nodes: node1,node2,node3
