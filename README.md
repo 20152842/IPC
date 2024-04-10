@@ -4,7 +4,9 @@
 - 다수의 원격 쉘에 명령어를 실행하고 결과 수집 후 출력
 - Linux 환경에서 Docker를 활용하여 진행
 
-기본 사용 옵션
+
+
+## 기본 사용 옵션
 1. node1, node2, node3, node4의 /proc/loadavg 읽어오기
    >     ex) $clsh -h node1,node2,node3,node4 cat /proc/loadavg
    >     -> clsh ~ node4 : 실행 옵션 / cat /proc/loadavg : 원격 실행할 명령어
@@ -17,16 +19,18 @@
 
 2. 호스트 파일에 노드의 이름을 저장하여 사용
    호스트 파일에는 한 라인에 하나의 호스트 이름 혹은 IP 주소가 저장
-  >     ex) $cat ./hostfile의 내용이 아래와 같을 때
-  >          node1
-  >          node2
-  >          node3
-  >          node4
-  > 
-  >     $clsh -hostfile ./hostfile cat /proc/loadavg 의 명령어는
-  >     $clsh -h node1,node2,node3,node4 cat /proc/loadavg 를 명령어와 동일하다.
+   >     ex) $cat ./hostfile의 내용이 아래와 같을 때
+   >          node1
+   >          node2
+   >          node3
+   >          node4
+   > 
+   >     $clsh -hostfile ./hostfile cat /proc/loadavg 의 명령어는
+   >     $clsh -h node1,node2,node3,node4 cat /proc/loadavg 를 명령어와 동일하다.
 
-추가 사용 옵션
+
+
+##추가 사용 옵션
 1. --hostfile 옵션을 생략할 경우의 동작
    1. CLSH_HOST 환경 변수에서 호스트 이름 읽어오기, `:`(콜론)으로 구분
    2. CLSH_HOSTFILE 환경 변수에서 파일 이름 읽어오기(default : 상대경로, `/`로 시작할 경우 절대 경로 처리)
