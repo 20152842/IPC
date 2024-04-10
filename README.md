@@ -1,8 +1,8 @@
 # IPC
 
 - CLSH - 클러스터쉘(CLuster SHell)
-*      다수의 원격 쉘에 명령어를 실행하고 결과 수집 후 출력
-*      Linux 환경에서 Docker를 활용하여 진행
+- 다수의 원격 쉘에 명령어를 실행하고 결과 수집 후 출력
+- Linux 환경에서 Docker를 활용하여 진행
 
 기본 사용 옵션
 1. node1, node2, node3, node4의 /proc/loadavg 읽어오기
